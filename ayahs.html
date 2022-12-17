@@ -3,38 +3,41 @@
 <head>
 <title>Ayah of the Day</title>
 </head>
-<script>
-    import { get_arabic_verse_text } from './ayahprinter';
-    import { get_english_verse_text } from './ayahprinter';
-    import { convert_to_arabic } from './ayahprinter';
-    import { get_arabic } from './ayahprinter';
-    import { get_english } from './ayahprinter';
-    import { surah_name_translation } from './ayahprinter';
-    import { is_first_letter_vowel } from './ayahprinter';
-    import { ayah_printer } from './ayahprinter';
-</script>
-
-<script>
-async function printAyah() {
-    event.preventDefault(); // prevent the form from submitting
-    const surahNumber = document.getElementById('surahNumber').value;
-    const ayahNumber = document.getElementById('ayahNumber').value;
-    const output = await ayah_printer(surahNumber, ayahNumber);
-    document.getElementById('output').innerHTML = output;
-}
-</script>
 
 <body>
     <h1>Ayah Printer</h1>
         <form id="ayahForm">
-        <label for="surahNumber">Surah Number:</label><br>
-        <input type="number" id="surahNumber" name="surahNumber"><br>
-        <label for="ayahNumber">Ayah Number:</label><br>
-        <input type="number" id="ayahNumber" name="ayahNumber"><br><br>
-        <button type="submit" onclick="printAyah()">Print Ayah</button>
+            <label for="surahNumber">Surah Number:</label><br>
+            <input type="number" id="surahNumber" name="surahNumber"><br>
+            <label for="ayahNumber">Ayah Number:</label><br>
+            <input type="number" id="ayahNumber" name="ayahNumber"><br><br>
+            <button type="submit" onclick="printAyah()">Print Ayah</button>
         </form> 
         <br>
         <div id="output"></div>
+    
+        <script>
+
+        </script>
+        
+        <script type="module">
+            import { get_arabic_verse_text } from './ayahprinter';
+            import { get_english_verse_text } from './ayahprinter';
+            import { convert_to_arabic } from './ayahprinter';
+            import { get_arabic } from './ayahprinter';
+            import { get_english } from './ayahprinter';
+            import { surah_name_translation } from './ayahprinter';
+            import { is_first_letter_vowel } from './ayahprinter';
+            import { ayah_printer } from './ayahprinter';
+            
+            async function printAyah() {
+                event.preventDefault(); // prevent the form from submitting
+                const surahNumber = document.getElementById('surahNumber').value;
+                const ayahNumber = document.getElementById('ayahNumber').value;
+                const output = await ayah_printer(surahNumber, ayahNumber);
+                document.getElementById('output').innerHTML = output;
+            }
+        </script>
 
 </body>
 </html>

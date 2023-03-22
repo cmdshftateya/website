@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ayah of Day Log</title>
+    <title>CSV Table</title>
     <style>
-        table {
-          border-collapse: collapse;
-          width: 100%;
-        }
-        th, td {
-          border: 1px solid black;
-          padding: 8px;
-          text-align: left;
-        }
-        th:first-child {
-          font-weight: bold;
-        }
-      </style>
-    </head>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th:first-child {
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <table>
@@ -40,7 +39,7 @@
         .then(data => {
           const rows = data.split('\n');
           const tbody = document.getElementById('table-body');
-          rows.forEach(row => {
+          rows.forEach((row, index) => {
             const cells = row.split(',');
             const tr = document.createElement('tr');
             cells.forEach(cell => {
@@ -49,6 +48,9 @@
               tr.appendChild(td);
             });
             tbody.appendChild(tr);
+            if (index === 0) {
+              tr.classList.add('header-row');
+            }
           });
         });
     </script>

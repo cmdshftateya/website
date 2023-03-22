@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSV Table</title>
+    <title>Ayah of Day Log</title>
   </head>
   <body>
     <table>
@@ -10,23 +10,32 @@
           <th>Column 1</th>
           <th>Column 2</th>
           <th>Column 3</th>
+          <th>Column 4</th>
+          <th>Column 5</th>
         </tr>
       </thead>
-      <tbody>
-        <?php
-          $filename = 'data.csv';
-          if (($handle = fopen($filename, 'r')) !== FALSE) {
-            while (($row = fgetcsv($handle, 1000, ',')) !== FALSE) {
-              echo '<tr>';
-              foreach ($row as $cell) {
-                echo '<td>' . htmlspecialchars($cell) . '</td>';
-              }
-              echo '</tr>';
-            }
-            fclose($handle);
-          }
-        ?>
+      <tbody id="table-body">
       </tbody>
     </table>
+    
+    <script>
+      const url = 'ayahs_until_3_22_2023.csv';
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          const rows = data.split('\n');
+          const tbody = document.getElementById('table-body');
+          rows.forEach(row => {
+            const cells = row.split(',');
+            const tr = document.createElement('tr');
+            cells.forEach(cell => {
+              const td = document.createElement('td');
+              td.textContent = cell;
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+          });
+        });
+    </script>
   </body>
 </html>

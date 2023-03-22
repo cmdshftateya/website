@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSV Table</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          $filename = 'data.csv';
+          if (($handle = fopen($filename, 'r')) !== FALSE) {
+            while (($row = fgetcsv($handle, 1000, ',')) !== FALSE) {
+              echo '<tr>';
+              foreach ($row as $cell) {
+                echo '<td>' . htmlspecialchars($cell) . '</td>';
+              }
+              echo '</tr>';
+            }
+            fclose($handle);
+          }
+        ?>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSV Table</title>
+    <title>Ayah of the Day Log</title>
     <style>
       table {
         border-collapse: collapse;
@@ -39,19 +39,16 @@
         .then(data => {
           const rows = data.split('\n');
           const tbody = document.getElementById('table-body');
-          rows.forEach((row, index) => {
-            const cells = row.split(',');
+          for (let i = 1; i < rows.length; i++) {
+            const cells = rows[i].split(',');
             const tr = document.createElement('tr');
-            cells.forEach(cell => {
+            for (let j = 0; j < cells.length; j++) {
               const td = document.createElement('td');
-              td.textContent = cell;
+              td.textContent = cells[j];
               tr.appendChild(td);
-            });
-            tbody.appendChild(tr);
-            if (index === 0) {
-              tr.classList.add('header-row');
             }
-          });
+            tbody.appendChild(tr);
+          }
         });
     </script>
   </body>

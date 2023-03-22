@@ -40,7 +40,7 @@
           const rows = data.split('\n');
           const tbody = document.getElementById('table-body');
           for (let i = 1; i < rows.length; i++) {
-            const cells = rows[i].split(',');
+            const cells = splitCSVRow(rows[i]);
             const tr = document.createElement('tr');
             for (let j = 0; j < cells.length; j++) {
               const td = document.createElement('td');
@@ -50,6 +50,25 @@
             tbody.appendChild(tr);
           }
         });
+      
+      function splitCSVRow(csvRow) {
+        let cells = [];
+        let currentCell = '';
+        let insideQuotes = false;
+        for (let i = 0; i < csvRow.length; i++) {
+          const char = csvRow.charAt(i);
+          if (char === ',' && !insideQuotes) {
+            cells.push(currentCell.trim());
+            currentCell = '';
+          } else if (char === '"' && csvRow.charAt(i - 1) !== '\\' && csvRow.charAt(i + 1) !== '"') {
+            insideQuotes = !insideQuotes;
+          } else {
+            currentCell += char;
+          }
+        }
+        cells.push(currentCell.trim());
+        return cells;
+      }
     </script>
   </body>
 </html>

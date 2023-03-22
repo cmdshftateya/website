@@ -16,7 +16,7 @@
         <br>
         <div id="output"></div>
         
-        <script>
+    <script>
             async function fetchData(url) {
                 const promise = await fetch(url);
                 const json = await promise.json();
@@ -43,6 +43,13 @@
                 const url = `https://api.quran.com/api/v4/chapters/${surah_number}?language=en`;
                 const json = await fetchData(url);
                 return json.chapter.name_simple;
+            }
+            
+            async function verse_count(surah_number) {
+                const url = 'https://api.quran.com/api/v4/chapters/${surah_number}?language=en';
+                const json = await fetchData(url);
+                return parseInt(json.chapter.verses_count);
+
             }
 
 
@@ -135,18 +142,10 @@
 
                 const surah_name = await surah_name_translation(surah_number);
 
-                let surah_or_surat = "";
-
-                if (is_first_letter_vowel(surah_name)) {
-                    surah_or_surat = "Surat";
-                } else {
-                    surah_or_surat = "Surah";
-                }
-
                 const output = 
                     "Ayah of the Day, " +
                     daydate + "<br/><br/>" +
-                    surah_or_surat + " " + surah_name + ", Ayah " + ayah_number + "<br/><br/>" +
+                    is_first_letter_vowel() + " " + surah_name + ", Ayah " + ayah_number + "<br/><br/>" +
                     arabic + "<br/><br/>" +
                     english;
                 
@@ -155,21 +154,6 @@
             }
 
 
-
-            async function quranInfo(surahNumber) {
-                const fs = require('fs');
-
-                // Read the contents of the file into a string
-                const jsonString = fs.readFileSync('quraninfo.json', 'utf8');
-
-                // Parse the string into a JavaScript object
-                const data = JSON.parse(jsonString);
-
-                const surahData = data[surahNumber];
-                
-                return surahData;
-            }
-
             async function printAyah() {
                 
                 event.preventDefault(); // prevent the form from submitting
@@ -177,22 +161,37 @@
                 const ayahNumber = document.getElementById('ayahNumber').value;
 
                 let output = "";
+                
+                let ayahStart;
+                if (isNaN(ayahNumber)) {
+                    ayahStart = parseInt(ayahNumber.split("-")[1]);
+                    console.log(ayahNumber.split("-")[1]);
+                } else {
+                    ayahStart = parseInt(ayahNumber);
+                    console.log(ayahNumber);
+                }
+
+                const count = await verse_count(surahNumber);
+                console.log(typeof count);
 
                 if (surahNumber > 114) {
                     console.log("Surah number not in range");
-                    let output = "The Quran only has 114 surahs. Please choose one of the 114.";
-                } else if (ayahNumber > quranInfo(surahNumber).Verses) {
-                    console.log("This surah does not have that many ayahs.")
-                    name = await surah_name_translation(surahNumber);
-                    sura = 
-
+                    output = "The Quran only has 114 surahs. Please choose one of the 114.";
+                } else if (ayahStart > count) {
+                    const name = await surah_name_translation(surahNumber);
+                    const sura = is_first_letter_vowel();
+                    output = (sura +  
+                        " " + 
+                        name + 
+                        " does not have " +
+                        ayahNumber.split("-")[1] +
+                        " ayahs. Please request somewhere from ayah 1-" + 
+                        quranInfo(surahNumber).Verses
+                        );
+                    console.log(output);
                 } else {
-                    let output = await ayah_printer(surahNumber, ayahNumber);
+                    output = await ayah_printer(surahNumber, ayahNumber);
                 }
-
-                
-
-                
 
                 console.log(output);
                 document.getElementById('output').innerHTML = output;

@@ -83,7 +83,7 @@ function is_first_letter_vowel(str) {
     return str[0] === "a" || str[0] === "e" || str[0] === "i" || str[0] === "o" || str[0] === "u";
 }
   
-export async function ayah_printer(surah_number, ayah_number) {  
+async function ayah_printer(surah_number, ayah_number) {  
     const d = new Date();
     const daydate = (d.getMonth() + 1) + "/" + d.getDate();
     // console.log(datetime);
@@ -100,10 +100,31 @@ export async function ayah_printer(surah_number, ayah_number) {
     const output = 
         "Ayah of the Day, " +
         daydate + "\n\n" + 
-        surah_or_surat + " " + surah_name + ", " + ayah_number +  "\n\n" + 
+        surah_or_surat + " " + surah_name + ", Ayah " + ayah_number +  "\n\n" + 
         arabic +  "\n\n" + 
         english;
     
     console.log(output);
     return output;
 }
+
+function errorChecker(surahNumber, ayahNumber) {
+    const fs = require('fs');
+
+    // Read the contents of the file into a string
+    const jsonString = fs.readFileSync('quraninfo.json', 'utf8');
+
+    // Parse the string into a JavaScript object
+    const data = JSON.parse(jsonString);
+    
+    const surahData = data[surahNumber];
+    console.log(surahData);
+
+    if (surahNumber > 114) {
+        console.log("Doesn't work");
+        
+    }
+}
+
+errorChecker(115,3)
+

@@ -46,7 +46,7 @@
             }
             
             async function verse_count(surah_number) {
-                const url = 'https://api.quran.com/api/v4/chapters/${surah_number}?language=en';
+                const url = `https://api.quran.com/api/v4/chapters/${surah_number}?language=en`;
                 const json = await fetchData(url);
                 return parseInt(json.chapter.verses_count);
 

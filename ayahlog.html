@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Ayah of the Day Log</title>
+    <link rel="icon" href="face.png">
     <style>
       table {
         border-collapse: collapse;
@@ -22,7 +22,7 @@
     <table>
       <thead>
         <tr>
-          <th>Column 1</th>
+          <th>Date</th>
           <th>Column 2</th>
           <th>Column 3</th>
           <th>Column 4</th>
@@ -41,6 +41,9 @@
           const rows = data.split('\n');
           const tbody = document.getElementById('table-body');
           for (let i = 1; i < rows.length; i++) {
+            if (i == 3) {
+              continue;
+            }
             const cells = splitCSVRow(rows[i]);
             const tr = document.createElement('tr');
             for (let j = 0; j < cells.length; j++) {

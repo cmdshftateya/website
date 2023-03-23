@@ -143,7 +143,8 @@
                 const surah_name = await surah_name_translation(surah_number);
                 
                 const line1 =  "Ayah of the Day, " + daydate + "<br/><br/>";
-                const line2 = is_first_letter_vowel() + " " + surah_name + ", Ayah " + ayah_number + "<br/><br/>";
+                // TODO: Fix surat/surah thing
+                const line2 = "Surah " + surah_name + ", Ayah " + ayah_number + "<br/><br/>";
                 const line3 = arabic + "<br/><br/>";
                 const line4 = english;
 

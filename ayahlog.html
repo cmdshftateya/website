@@ -16,6 +16,30 @@
       th:first-child {
         font-weight: bold;
       }
+      
+      /* Add the following CSS rules to customize column widths */
+      table {
+        table-layout: fixed;
+      }
+      
+      th:nth-child(1), td:nth-child(1) {
+        width: 5;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      th:nth-child(2), td:nth-child(2) {
+        width: 5;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      th:nth-child(3), td:nth-child(3) {
+        width: 5;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     </style>
   </head>
   <body>

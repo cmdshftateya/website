@@ -183,7 +183,7 @@ async function printAyah() {
 
     console.log(output);
     document.getElementById('output').innerHTML = output;
-    document.getElementById("output").classList.add("border");
+    document.getElementById("output").style.display = "block";
     const copyButton = document.getElementById("copyButton");
     copyButton.style.display = "inline-block";
 }

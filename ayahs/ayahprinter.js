@@ -183,7 +183,34 @@ async function printAyah() {
 
     console.log(output);
     document.getElementById('output').innerHTML = output;
+    document.getElementById("output").style.display = "block";
+    const copyButton = document.getElementById("copyButton");
+    copyButton.style.display = "inline-block";
+}
+
+function seededRandom(seed, min, max) {
+    max = max || 1;
+    min = min || 0;
+  
+    // use the seed to initialize the random number generator
+    var random = (Math.sin(seed) * 10000);
+    random = random - Math.floor(random);
+  
+    return Math.floor(random * (max - min + 1) + min);
+  }
+  
+  
+async function printRandomAyah() {
+    const currentDate = new Date(); // get the current date
+    const dateIndex = Math.floor(currentDate.getTime() / (24 * 60 * 60 * 1000)); // convert to numerical index
+
+    const surah_number = seededRandom(dateIndex, 1, 114);
+    const ayah_count = await verse_count(surah_number);
+    const ayah_number = seededRandom(dateIndex, 1, ayah_count);
+
+    output = await ayah_printer(surah_number, ayah_number);
+    document.getElementById('output').innerHTML = output;
     document.getElementById("output").classList.add("border");
     const copyButton = document.getElementById("copyButton");
     copyButton.style.display = "inline-block";
-}            
+}

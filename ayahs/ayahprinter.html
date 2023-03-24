@@ -3,29 +3,24 @@
     <head>
         <title>Ayah of the Day Printer</title>
         <link rel="icon" href="/pictures/face.png">
-        <style>
-            #output {
-                padding: 10px;
-            }
-            .border {
-                border: 1px solid rgba(0, 0, 0, 0.5);
-            }
-        </style>
+        <link rel="stylesheet" href="../css/printer.css">
     </head>
 
 <body>
     <h1>Ayah Printer</h1>
-        <form id="ayahForm">
-            <label for="surahNumber">Surah Number:</label><br>
-            <input id="surahNumber" name="surahNumber"><br>
-            <label for="ayahNumber">Ayah Number:</label><br>
-            <input id="ayahNumber" name="ayahNumber"><br><br>
-            <button type="submit" onclick="printAyah()">Print Ayah</button>
-            <button id="copyButton" onclick="copyToClipboard()" style="display: none;">Copy to Clipboard</button>
-        </form> 
-        <br>
-        <div id="output"></div>
+    
+    <form id="ayahForm">
+        <label for="surahNumber">Surah Number:</label>
+        <input id="surahNumber" name="surahNumber" type="text">
+        <label for="ayahNumber">Ayah Number:</label>
+        <input id="ayahNumber" name="ayahNumber" type="text">
+        <button type="submit" onclick="printAyah()">Print Ayah</button>
+    </form> 
+    <div id="output" class="output-box"></div>
+    <button id="copyButton" onclick="copyToClipboard()" style="display: none;" class="big-button">Copy to Clipboard</button>
 
+    <h2>---OR---</h2>
+    <a href="random-ayah.html" class="big-button">Get a random ayah.</a>
         
     <script src="ayahprinter.js"></script>
 

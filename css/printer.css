@@ -1,122 +1,133 @@
 /* Reset default browser styles */
-
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    }
-    /* Center the main content vertically and horizontally */
-    body {
+  }
+  
+  /* Set a custom font for the entire page */
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f2f2f2;
+  }
+  
+  /* Center the main content vertically and horizontally */
+  body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
-    background-color: #fff;
-    }
-    
-    /* Style the page header */
-    header {
-    background-color: #000;
-    color: #fff;
-    padding: 1rem;
-    font-size: 1.5rem;
-    text-align: center;
-    }
-    
-    h1 {
+  }
+  
+  /* Style the page header */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #f00;
-    }
-    
-    /* Style the form */
-    form {
-    width: 100%;
-    max-width: 500px;
+  }
+  
+  /* Style the form */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
-    border: 2px solid #000;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
     font-size: 1.2rem;
-    margin-top: 20px;
-    }
-    
-    label {
     font-weight: bold;
     margin-bottom: 0.5rem;
-    }
-    
-    input[type="text"] {
+  }
+  
+  input[type="text"] {
     width: 100%;
     padding: 0.5rem;
-    border: 2px solid #f00;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
     margin-bottom: 1rem;
-    }
-    
-    button[type="submit"] {
-    display: block;
-    margin: 0 auto;
+  }
+  
+  button[type="submit"] {
+    display: inline-block;
     padding: 1rem 2rem;
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    background-color: #f00;
-    color: #fff;
+    background-color: #4CAF50;
+    color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s ease-in-out;
-    margin-top: 10px;
-    }
-    
-    button[type="submit"]:hover {
-    background-color: #000;
-    }
-    
-    /* Style the output box */
-    #output {
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Style the output box */
+  #output {
     width: 100%;
-    max-width: 500px;
     padding: 1rem;
     margin-top: 2rem;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #f9c74f;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     display: none;
-    color: #222222;
-    }
-    
-    /* Style the random ayah button */
-    .big-button {
-    display: block;
-    margin: 2rem auto;
+  }
+  
+  /* Style the random ayah button */
+  .big-button {
+    display: inline-block;
     padding: 1rem 2rem;
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    background-color: #8338ec;
-    color: #fff;
-    border: 2px solid #fff;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s ease-in-out;
-    }
-    
-    .big-button:hover {
-    background-color: #fff;
-    color: #222222;
+    margin-top: 2rem;
+  }
+  
+  .big-button:hover {
+    background-color: #3e8e41;
     transition: background-color 0.3s ease-in-out;
-    }
-    
-    .output-box {
+  }
+
+  .output-box {
     padding: 10px;
-    border: 2px solid #8338ec;
-    background-color: #fff;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    }
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  /* Set the width for the form and the output box */
+  .form-container {
+    width: 500px;
+  }
+  #output {
+    width: 500px;
+  }
+  

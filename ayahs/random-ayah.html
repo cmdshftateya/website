@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ayah of the Day Printer</title>
+        <link rel="icon" href="/pictures/face.png">
+        <style>
+            #output {
+                padding: 10px;
+            }
+            .border {
+                border: 1px solid rgba(0, 0, 0, 0.5);
+            }
+            /* Style the button */
+            .big-button {
+                display: inline-block;
+                padding: 20px;
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                text-decoration: none;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+            
+            /* Hover effect for the button */
+            .big-button:hover {
+                background-color: #3e8e41;
+            }
+        </style>
+    </head>
+
+<body>
+    <h1>Random Ayah Printer</h1>
+    <button type="submit" onclick="printRandomAyah()" class="big-button">Get a random ayah.</button>
+    <button id="copyButton" onclick="copyToClipboard()" style="display: none;">Copy to Clipboard</button>
+    <div id="output"></div>
+        
+    <script src="ayahprinter.js"></script>
+
+</body>
+</html>

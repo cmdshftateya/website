@@ -188,25 +188,8 @@
                 const count = await verse_count(surahNumber);
                 console.log(typeof count);
 
-                if (surahNumber > 114) {
-                    console.log("Surah number not in range");
-                    output = "The Quran only has 114 surahs. Please choose one of the 114.";
-                } else if (ayahStart > count) {
-                    const name = await surah_name_translation(surahNumber);
-                    const sura = is_first_letter_vowel();
-                    output = (sura +  
-                        " " + 
-                        name + 
-                        " does not have " +
-                        ayahNumber.split("-")[1] +
-                        " ayahs. Please request somewhere from ayah 1-" + 
-                        quranInfo(surahNumber).Verses
-                        );
-                    console.log(output);
-                } else {
-                    output = await ayah_printer(surahNumber, ayahNumber);
-                }
-
+                output = await ayah_printer(surahNumber, ayahNumber);
+                
                 console.log(output);
                 document.getElementById('output').innerHTML = output;
                 document.getElementById("output").classList.add("border");

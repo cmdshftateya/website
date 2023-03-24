@@ -171,10 +171,17 @@
             async function printAyah() {
                 
                 event.preventDefault(); // prevent the form from submitting
+                
                 const surahNumber = document.getElementById('surahNumber').value;
                 const ayahNumber = document.getElementById('ayahNumber').value;
-
+                
                 let output = "";
+                
+                // Check if surahNumber is valid
+                if (isNaN(surahNumber) || surahNumber < 1 || surahNumber > 114) {
+                    alert("Invalid surah number. Please enter a number between 1 and 114.");
+                    return;
+                }
                 
                 let ayahStart;
                 if (isNaN(ayahNumber)) {
@@ -184,18 +191,18 @@
                     ayahStart = parseInt(ayahNumber);
                     console.log(ayahNumber);
                 }
-
+            
                 const count = await verse_count(surahNumber);
                 console.log(typeof count);
-
+            
                 output = await ayah_printer(surahNumber, ayahNumber);
-                
+            
                 console.log(output);
                 document.getElementById('output').innerHTML = output;
                 document.getElementById("output").classList.add("border");
                 const copyButton = document.getElementById("copyButton");
                 copyButton.style.display = "inline-block";
-            }
+            }            
     </script>
 
 </body>

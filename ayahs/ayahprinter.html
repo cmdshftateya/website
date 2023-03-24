@@ -10,13 +10,12 @@
     <h1>Ayah Printer</h1>
     
     <form id="ayahForm">
-        <label for="surahNumber">Surah Number:</label><br>
-        <input id="surahNumber" name="surahNumber"><br>
-        <label for="ayahNumber">Ayah Number:</label><br>
-        <input id="ayahNumber" name="ayahNumber"><br><br>
+        <label for="surahNumber">Surah Number:</label>
+        <input id="surahNumber" name="surahNumber" type="text">
+        <label for="ayahNumber">Ayah Number:</label>
+        <input id="ayahNumber" name="ayahNumber" type="text">
         <button type="submit" onclick="printAyah()">Print Ayah</button>
     </form> 
-    <br>
     <div id="output" class="output-box"></div>
     <button id="copyButton" onclick="copyToClipboard()" style="display: none;" class="big-button">Copy to Clipboard</button>
 

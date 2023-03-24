@@ -199,7 +199,6 @@ function seededRandom(seed, min, max) {
     return Math.floor(random * (max - min + 1) + min);
   }
   
-  
 async function printRandomAyah() {
     const currentDate = new Date(); // get the current date
     const dateIndex = Math.floor(currentDate.getTime() / (24 * 60 * 60 * 1000)); // convert to numerical index
@@ -214,4 +213,39 @@ async function printRandomAyah() {
     const copyButton = document.getElementById("copyButton");
     copyButton.style.display = "inline-block";
     document.getElementById("output").style.display = "block";
+}
+
+async function trueAOTD() {
+    const currentDate = new Date(); // get the current date
+    const dateIndex = Math.floor(currentDate.getTime() / (24 * 60 * 60 * 1000)); // convert to numerical index
+
+    const surah_number = seededRandom(dateIndex, 1, 114);
+    const ayah_count = await verse_count(surah_number);
+    const ayah_number = seededRandom(dateIndex, 1, ayah_count);
+
+    output = await ayah_printer(surah_number, ayah_number);
+}
+
+async function printAOTD() {
+    const result = await trueAOTD();
+    const resultBox = document.getElementById("result-box");
+    const resultElement = document.createElement("p");
+    resultElement.innerHTML = result;
+    resultBox.appendChild(resultElement);
+}
+
+// Call the printAOTD function when the page loads
+window.onload = function() {
+    printAOTD();
+};
+
+function copyTrueAOTDToClipboard() {
+    let output = document.getElementById("result-box");
+    let range = document.createRange();
+    range.selectNode(output);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    alert("Output copied to clipboard!"); 
 }

@@ -213,4 +213,5 @@ async function printRandomAyah() {
     document.getElementById("output").classList.add("border");
     const copyButton = document.getElementById("copyButton");
     copyButton.style.display = "inline-block";
+    document.getElementById("output").style.display = "block";
 }

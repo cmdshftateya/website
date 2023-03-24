@@ -136,6 +136,12 @@
                 }
             }
 
+            async function surah_name(surah_number) {
+                const name = await surah_name_translation(surah_number);
+                const output = is_first_letter_vowel(name) + " " + name;
+                return output;
+            }
+
             async function ayah_printer(surah_number, ayah_number) {  
                 const d = new Date();
                 const daydate = (d.getMonth() + 1) + "/" + d.getDate();
@@ -194,7 +200,14 @@
             
                 const count = await verse_count(surahNumber);
                 console.log(typeof count);
-            
+
+                // Check if ayahNumber is valid
+                if (isNaN(ayahStart) || ayahStart < 1 || ayahStart > count) {
+                    const name = await surah_name(surahNumber);
+                    alert("Invalid ayah number. Please enter a number between 1 and " + count + " for " + name + ".")
+                    return;
+                }
+                        
                 output = await ayah_printer(surahNumber, ayahNumber);
             
                 console.log(output);

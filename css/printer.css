@@ -101,4 +101,46 @@ button[type="submit"]:hover {
     color: #1c1c1c;
     text-shadow: 1px 1px #f7b731;
 }
-    
+
+/* Style the random ayah button */
+.big-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FFCE00;
+    color: #222222;
+    border: 2px solid #222222;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.big-button:hover {
+    background-color: #222222;
+    color: #FFFFFF;
+    transition: background-color 0.3s ease-in-out;
+}
+  
+.output-box {
+    padding: 10px;
+    border: 2px solid #FFCE00;
+    background-color: #FFFFFF;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+  
+/* Set the width for the form and the output box */
+.form-container {
+    width: 500px;
+}
+  
+#output {
+    width: 500px;
+}

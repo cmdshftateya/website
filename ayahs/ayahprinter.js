@@ -199,7 +199,7 @@ function seededRandom(seed, min, max) {
     return Math.floor(random * (max - min + 1) + min);
   }
   
-async function printRandomAyah() {
+async function trueAOTD() {
     const currentDate = new Date(); // get the current date
     const dateIndex = Math.floor(currentDate.getTime() / (24 * 60 * 60 * 1000)); // convert to numerical index
 
@@ -215,3 +215,19 @@ async function printRandomAyah() {
     document.getElementById("output").style.display = "block";
 }
 
+function getRandomNumberInRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}  
+
+async function printRandomAyah() {
+    const surah_number = getRandomNumberInRange(1, 114);
+    const ayah_count = await verse_count(surah_number);
+    const ayah_number = getRandomNumberInRange(1, ayah_count);
+
+    output = await ayah_printer(surah_number, ayah_number);
+    document.getElementById('output').innerHTML = output;
+    document.getElementById("output").classList.add("border");
+    const copyButton = document.getElementById("copyButton");
+    copyButton.style.display = "inline-block";
+    document.getElementById("output").style.display = "block";
+}

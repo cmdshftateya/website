@@ -86,7 +86,7 @@
   
   /* Style the output box */
   #output {
-    width: 100%;
+    width: 80%;
     padding: 1rem;
     margin-top: 2rem;
     border: 1px solid #ccc;
@@ -125,9 +125,6 @@
   }
   /* Set the width for the form and the output box */
   .form-container {
-    width: 500px;
-  }
-  #output {
     width: 500px;
   }
   

@@ -9,19 +9,20 @@ body {
 }
 
 .body_header {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-variant: small-caps;
     text-align: center;
-    font-size: 85%;
+    font-size: 90%;
 }
 
 .links {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 125%;
     line-height: 10px;
 }
 
 .links_small {
-    font-family:  'Cormorant Garamond', serif;
+    font-family:  'EB Garamond', serif;
     font-size: 11pt;
     line-height: 10px;
 }
@@ -89,7 +90,7 @@ h3 {
 
 .projects_body h3 {
     text-align: center;
-    font-family:  'Cormorant Garamond', serif;
+    font-family:  'EB Garamond', serif;
     font-weight: normal;
 }
 
@@ -104,7 +105,7 @@ h1 {
 }
 
 .about_body {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 12pt;
     line-height: 26px;
 }
@@ -122,13 +123,13 @@ h1 {
 }
 
 .content_body {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: large;
     line-height: 26px;
 }
 
 .projects_body {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: large;
     line-height: 26px;
 }
@@ -151,21 +152,23 @@ h1 {
 .project_row_container {
     width: 95%;
     /* border: 1px solid #dddddd; */
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 100%;
-    padding: 2px;
+    font-family: 'EB Garamond', serif;
+    font-size: 150%;
+    /* padding: 2px; */
     outline: 2px solid #8f8f8f;
     border-radius: 4px;
-    margin: 10px;
+    margin: 0px;
 }
 
 .project_row {
     margin: 2px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     line-height: 26px;
 }
 
 .project_name {
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 1.5px;
     padding-left: 2%;
     font-size: 13pt;
@@ -190,7 +193,7 @@ h1 {
     float: right;
     padding-right: 2%;
     padding-left: 2%;
-    color: #8f8f8f;
+    color: #141414;
 }
 
 .project_icons {
@@ -213,11 +216,11 @@ h1 {
 }
 
 pre {
-    font-family:  'Cormorant Garamond', serif;
+    font-family:  'EB Garamond', serif;
 }
 
 .code_inline {
-    font-family:  'Cormorant Garamond', serif;
+    font-family:  'EB Garamond', serif;
     background-color: #FFF1E0;
 }
 
@@ -228,7 +231,7 @@ pre {
 }
 
 .log_body {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Cormorant Garamond', serif;
     padding: 2%;
     font-size: 11pt;
     line-height: 20px;
@@ -256,23 +259,36 @@ a {
 
 .log_body a {
     color: black;
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 1.5px;
 }
 
 .body_text a {
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 1.5px;
 }
 
 .about_body a {
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 1.5px;
 }
 
+.project_row a {
+    text-decoration: none;
+    color: black; /* Default color */
+    transition: font-weight 0.3s ease, font-style 0.3s ease; /* Add transition effect for smooth hover */
+}
+
+.project_row a:hover .project_name {
+    font-weight: bold;
+    /* font-style: italic; */
+    color: #3e3627; /* Dark brown color */
+}
+
+
 /* order here matters, this should be below the about_body a style */
 .links a {
-    text-decoration: underline;
+    text-decoration: none;
     font-size: 13pt;
 }
 
@@ -282,18 +298,27 @@ a {
 
 /* for index page links only */
 .index_links a {
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    /* font-size: 90%; */
+    text-decoration: none;
+    color: black; /* Default color */
+    transition: color 0.3s ease; /* Add a smooth transition effect for color change */
+
+    /* Add a bold dark brown color when hovering over the link */
+}
+
+.index_links a:hover {
+    font-weight: bold;
+    color: #5C3E07; /* Dark brown color */
 }
 
 .index_row_container {
-    width: 90%;
+    width: 100%;
     /* border: 1px solid #dddddd; */
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'EB Garamond', serif;
     font-size: 100%;
     padding: 2px;
-    outline: 2px solid #8f8f8f;
-    border-radius: 4px;
-    margin: 10px;
+    background-color: #F2DFCE;
+    /* outline: 2px solid #8f8f8f; */
+    /* border-radius: 4px; */
+    margin: 0px;
+    margin-top: 10px;
 }

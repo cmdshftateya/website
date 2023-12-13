@@ -292,6 +292,11 @@ a {
     font-size: 13pt;
 }
 
+.links a:hover {
+    font-weight: bold;
+    color: #5C3E07; /* Dark brown color */
+}
+
 .links_small a {
     text-decoration: none;
 }

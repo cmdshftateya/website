@@ -10,8 +10,8 @@ body {
 
 .body_header {
     font-family: 'Cormorant Garamond', serif;
-    font-variant: small-caps;
-    text-align: center;
+    font-weight: bold;
+    text-align: left;
     font-size: 90%;
 }
 
@@ -113,7 +113,7 @@ h1 {
 .content {
     width: 512px;
     margin: auto;
-    margin-top: 90px;
+    margin-top: 10px;
 }
 
 .notebook {

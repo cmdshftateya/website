@@ -1,0 +1,299 @@
+body {
+    background-color: #fff1e0;
+}
+
+.body {
+    width: 256px;
+    margin: auto;
+    margin-top: 128px;
+}
+
+.body_header {
+    font-family: 'Source Serif Pro', serif;
+    text-align: center;
+    font-size: 85%;
+}
+
+.links {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 125%;
+    line-height: 10px;
+}
+
+.links_small {
+    font-family:  'Cormorant Garamond', serif;
+    font-size: 11pt;
+    line-height: 10px;
+}
+
+.description {
+    float: right;
+}
+
+.icons {
+    text-align: center;
+    word-spacing: 10px;
+}
+
+.icon_img {
+    width: 36px;
+    height: 36px;
+}
+
+.icon_img_inline {
+    width: 22px;
+    height: 22px;
+    float: right;
+}
+
+.icon_img_table {
+    float: right;
+}
+
+.icon_img_table img {
+    width: 28px;
+    height: 28px;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+#header_img {
+    width: 50%;
+    height: 50%;
+    /* Prevent image blurring */
+    -ms-transform: translateZ(0); /* IE 9 */
+    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    transform: translateZ(0);
+}
+
+hr {
+    height: 1px; 
+    background: black;
+}
+
+.thin hr {
+    height: 0.25px; 
+    background: black;
+    width: 80%;
+}
+
+h3 {
+    text-align: center;
+}
+
+.projects_body h3 {
+    text-align: center;
+    font-family:  'Cormorant Garamond', serif;
+    font-weight: normal;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.about {
+    width: 512px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.about_body {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 12pt;
+    line-height: 26px;
+}
+
+.content {
+    width: 512px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.notebook {
+    width: 640px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.content_body {
+    font-family: 'Source Serif Pro', serif;
+    font-size: large;
+    line-height: 26px;
+}
+
+.projects_body {
+    font-family: 'Source Serif Pro', serif;
+    font-size: large;
+    line-height: 26px;
+}
+
+.embed_img {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 45%;
+    height: 45%;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.image_row {
+    text-align: center;
+    word-spacing: 30px;
+}
+
+.project_row_container {
+    width: 95%;
+    /* border: 1px solid #dddddd; */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 100%;
+    padding: 2px;
+    outline: 2px solid #8f8f8f;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.project_row {
+    margin: 2px;
+    line-height: 26px;
+}
+
+.project_name {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    padding-left: 2%;
+    font-size: 13pt;
+}
+
+.project_subtitle {
+    padding-left: 4%;
+    font-size: 11pt;
+    line-height: 22px;
+    color: #8f8f8f;
+}
+
+.subtitle {
+    font-size: 12pt;
+    color: #8f8f8f;
+}
+
+
+.project_date {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    float: right;
+    padding-right: 2%;
+    padding-left: 2%;
+    color: #8f8f8f;
+}
+
+.project_icons {
+    text-align: center;
+}
+
+.project_icons img {
+    width: 25px;
+    height: 25px;
+}
+
+.code_block {
+    font-size: 80%;
+    line-height: 16px;
+    background-color: rgb(240, 240, 240);
+    padding-left: 15px;
+    width: 100%;
+    overflow-x: scroll;
+    border-radius: 8px;
+}
+
+pre {
+    font-family:  'Cormorant Garamond', serif;
+}
+
+.code_inline {
+    font-family:  'Cormorant Garamond', serif;
+    background-color: #FFF1E0;
+}
+
+.log_title {
+    padding-top: 2%;
+    padding-left: 2%;
+    text-align: center;
+}
+
+.log_body {
+    font-family: 'Source Serif Pro', serif;
+    padding: 2%;
+    font-size: 11pt;
+    line-height: 20px;
+}
+
+.log_body p {
+    margin-top: 6pt;
+    margin-bottom: 6pt;
+}
+
+.log_body ul {
+    padding-left: 6%;
+}
+
+.log_body li {
+    padding-top: 4px;
+}
+
+/* LINKS STYLE */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.log_body a {
+    color: black;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+.body_text a {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+.about_body a {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+/* order here matters, this should be below the about_body a style */
+.links a {
+    text-decoration: underline;
+    font-size: 13pt;
+}
+
+.links_small a {
+    text-decoration: none;
+}
+
+/* for index page links only */
+.index_links a {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    /* font-size: 90%; */
+}
+
+.index_row_container {
+    width: 90%;
+    /* border: 1px solid #dddddd; */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 100%;
+    padding: 2px;
+    outline: 2px solid #8f8f8f;
+    border-radius: 4px;
+    margin: 10px;
+}

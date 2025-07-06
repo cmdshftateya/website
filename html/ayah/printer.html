@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <title>Ayah Printer | Abdulrahman</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">      
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../icons/haze-pen.png">
+    </head>
+    <body>
+        <div class="about">
+            <div class="body_header">
+                <h1>Ayah Printer</h1>
+            </div>
+            <div class="about_body">
+                <form id="ayahForm">
+                    <label for="surahNumber">Surah Number:</label>
+                    <input id="surahNumber" name="surahNumber" type="text">
+                    <br/>
+                    <br/>
+                    <label for="ayahNumber">Ayah Number:</label>
+                    <input id="ayahNumber" name="ayahNumber" type="text">
+                    <br/>
+                    <br/>
+                    <button type="submit" onclick="printAyah()" class="big-button">Print Ayah</button>
+                </form>
+                <div id="output" class="output-box"></div>
+                <button id="copyButton" onclick="copyToClipboard()" style="display: none;" class="big-button">Copy to Clipboard</button>
+                
+                <br/>
+                <br/>
+                <p>---OR---</p>
+                <br/>
+                <a href="random.html" class="big-button">Get a random ayah</a>
+                
+                <br/>
+                <br/>
+                <div class="links">
+                    <p><a href="index.html">&bull; return</a></p>
+                </div>
+                <br/>
+                <br/>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+        <script src="ayahprinter.js"></script>
+    </body>
+</html> 
